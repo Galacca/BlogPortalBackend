@@ -1,0 +1,4 @@
+examples
+.env
+node_modules
+build
