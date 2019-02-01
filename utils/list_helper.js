@@ -1,19 +1,16 @@
 const adder = (accumulator, currentValue) => accumulator + currentValue;
 const maxCallback = ( acc, cur ) => Math.max( acc, cur );
 
-const dummy = (blogs) =>
- {
+const dummy = (blogs) => {
   return blogs.reduce(adder, 1)
  }
 
-const totalLikes = (blogs) =>
-{
+const totalLikes = (blogs) => {
   const mapped = blogs.map(blogit => { return blogit.likes })
   return Number(mapped)
 }
 
-const favoriteBlog = (blogs) =>
-{
+const favoriteBlog = (blogs) => {
   const mapped2 = blogs.map(blogia => { return blogia.likes } )
   return blogs.find( blog => blog.likes === mapped2.reduce(maxCallback));
 }

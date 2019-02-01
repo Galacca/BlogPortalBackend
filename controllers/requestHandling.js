@@ -51,14 +51,16 @@ blogsRouter.put('/:id', async (request, response) => {
     }
     
     if ( blog.user.toString() != user._id.toString() )
-      {return response.status(401).json({ error: 'Blog creator and user ID mismatch.' })}
-      else{
+      {
+        return response.status(401).json({ error: 'Blog creator and user ID mismatch.' })}
+      else
+      {
       await Blog.findOneAndDelete({ "_id" : request.params.id })
       response.status(204).end()
       }
     } catch (exception) {
       console.log(exception)
-      response.status(400).send({ error: 'Malformatted id.' })
+      response.status(400).json({ error: 'Malformatted id.' })
     }
   })
 
