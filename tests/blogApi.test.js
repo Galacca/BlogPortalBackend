@@ -88,7 +88,6 @@ test('all blogs are returned', async () => {
         console.log(response.body.id)
         await api
         .delete(`/api/blogs/${response.body.id}`)
-        //console.log(await api .get('/api/blogs'))
         .expect(204)
     })
 

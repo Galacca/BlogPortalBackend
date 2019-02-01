@@ -1,24 +1,21 @@
 const adder = (accumulator, currentValue) => accumulator + currentValue;
 const maxCallback = ( acc, cur ) => Math.max( acc, cur );
 
-const dummy = (blogs) => {
-   return blogs.reduce(adder, 1)
-  }
+const dummy = (blogs) =>
+ {
+  return blogs.reduce(adder, 1)
+ }
 
-  const totalLikes = (blogs) => {
-    const mapped = blogs.map(blogit => {
-      return blogit.likes;
-  })
+const totalLikes = (blogs) =>
+{
+  const mapped = blogs.map(blogit => { return blogit.likes })
   return Number(mapped)
 }
 
-const favoriteBlog = (blogs) => {
-  const mapped2 = blogs.map(blogia => {
-    return blogia.likes 
-  } )
-
-return blogs.find( blog => blog.likes === mapped2.reduce(maxCallback));
-
+const favoriteBlog = (blogs) =>
+{
+  const mapped2 = blogs.map(blogia => { return blogia.likes } )
+  return blogs.find( blog => blog.likes === mapped2.reduce(maxCallback));
 }
 
 const mostBlogs = (blogs) => {
@@ -51,9 +48,7 @@ blogs.forEach(element => {
 
 });
 
-const comparisonMap = comparisonArray.map(compa => {
-  return Number(compa.blogs)
-} )
+const comparisonMap = comparisonArray.map(compa => { return Number(compa.blogs)} )
 return comparisonArray.find( blog => blog.blogs === comparisonMap.reduce(maxCallback));
 
 }
@@ -87,13 +82,11 @@ const mostLikes = (blogs) => {
   
   });
   
-  const comparisonMap = comparisonArray.map(compa => {
-    return Number(compa.likes)
-  } )
+  const comparisonMap = comparisonArray.map(compa => { return Number(compa.likes) } )
   return comparisonArray.find( blog => blog.likes === comparisonMap.reduce(maxCallback));
   
   }
-
+ 
   module.exports = {
     dummy,
     totalLikes,
