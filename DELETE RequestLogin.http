@@ -1,0 +1,7 @@
+DELETE http://localhost:3001/api/blogs/5babcfe6ad95ed13f48e9379
+Content-Type: application/json
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IlRlc3RpcGV0byIsImlkIjoiNWJhYmVmY2I3M2U5ZWEwN2Y4NDI5ZTk3IiwiaWF0IjoxNTM4MzE4NjU5fQ._riHtcznvnLuq0zaOIh9VI-hW3bEtzUG399mGC2x0TU
+
+{
+    "id": "5babcfe6ad95ed13f48e9379"
+}

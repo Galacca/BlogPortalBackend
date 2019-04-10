@@ -8,7 +8,7 @@ const initialUser = [
       username: 'Galaca',
       name: 'Galaca',
       over18: true,
-      password: 123
+      password: '123'
     }]
 
 beforeEach(async () => {

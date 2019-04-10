@@ -1,0 +1,10 @@
+POST http://localhost:3001/api/blogs/
+Content-Type: application/json
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IlRlc3RpcGV0byIsImlkIjoiNWJhYmVmY2I3M2U5ZWEwN2Y4NDI5ZTk3IiwiaWF0IjoxNTM3OTk3NjU2fQ.Dy-GfL6HIw7SOWYM4X5TemYkzwucQWZcxL7BJ8HQD5k
+
+{
+    "title": "Login Testi Middlewarella",
+    "author": "Testimies",
+    "url": "waddel",
+    "likes": "0"
+}
