@@ -50,7 +50,7 @@ blogsRouter.delete('/:id', async (request, response) => {
       return response.status(401).json({ error: 'Token is missing or invalid.' })
     }
 
-    // eslint-disable-next-line eqeqeq, pieni tovi kun tämän kirjoitin mutta muistaakseeni tämän pitää olla just eikä melkein näin toisin ku lint haluaa
+    // eslint-disable-next-line eqeqeq, tämän nyt vain pitää olla näin tai se ei toimi
     if ( blog.user.toString() != user._id.toString() )
     {
       return response.status(401).json({ error: 'Blog creator and user ID mismatch.' })}
