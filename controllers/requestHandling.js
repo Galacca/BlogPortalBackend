@@ -17,7 +17,7 @@ const formatBlog = (blog) => {
 blogsRouter.get('/', async (request, response) => {
   const blogs = await Blog
     .find({})
-    .populate('blogs', { title: 1, url: 1})
+    .populate('blogs', { title: 1, url: 1 })
   response.json(blogs.map(formatBlog))
 })
 

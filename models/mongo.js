@@ -16,9 +16,9 @@ blogSchema.statics.format = function(blog) {
     likes: blog.likes,
     id: blog._id,
     user: blog.user
-}) 
+  })
 }
 
-const Blog = mongoose.model('Blog', blogSchema);
+const Blog = mongoose.model('Blog', blogSchema)
 
 module.exports = Blog

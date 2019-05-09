@@ -1,9 +1,9 @@
-const adder = (accumulator, currentValue) => accumulator + currentValue;
-const maxCallback = ( acc, cur ) => Math.max( acc, cur );
+const adder = (accumulator, currentValue) => accumulator + currentValue
+const maxCallback = ( acc, cur ) => Math.max( acc, cur )
 
 const dummy = (blogs) => {
   return blogs.reduce(adder, 1)
- }
+}
 
 const totalLikes = (blogs) => {
   const mapped = blogs.map(blogit => { return blogit.likes })
@@ -12,23 +12,24 @@ const totalLikes = (blogs) => {
 
 const favoriteBlog = (blogs) => {
   const mapped2 = blogs.map(blogia => { return blogia.likes } )
-  return blogs.find( blog => blog.likes === mapped2.reduce(maxCallback));
+  return blogs.find( blog => blog.likes === mapped2.reduce(maxCallback))
 }
 
+//TODO: Do this in a less...creative way. When I did this my attitude was "Can it be done like this?"
 const mostBlogs = (blogs) => {
 
-let comparisonArray = [
-  {
-    author: null,
-    blogs: 0
-  }
-]
+  let comparisonArray = [
+    {
+      author: null,
+      blogs: 0
+    }
+  ]
 
-blogs.forEach(element => {
-  const comparisonMappedAuthor = comparisonArray.map(compare => {
-    return compare.author
-  })
-  
+  blogs.forEach(element => {
+    const comparisonMappedAuthor = comparisonArray.map(compare => {
+      return compare.author
+    })
+
     if(comparisonMappedAuthor.includes(element.author))
     {
       const target = comparisonArray.find( compare => compare.author === element.author )
@@ -39,14 +40,14 @@ blogs.forEach(element => {
       const addObject = {
         author: element.author,
         blogs: 1
-      }      
+      }
       comparisonArray = comparisonArray.concat(addObject)
     }
 
-});
+  })
 
-const comparisonMap = comparisonArray.map(compa => { return Number(compa.blogs)} )
-return comparisonArray.find( blog => blog.blogs === comparisonMap.reduce(maxCallback));
+  const comparisonMap = comparisonArray.map(compa => { return Number(compa.blogs)} )
+  return comparisonArray.find( blog => blog.blogs === comparisonMap.reduce(maxCallback))
 
 }
 
@@ -57,38 +58,36 @@ const mostLikes = (blogs) => {
       likes: null
     }
   ]
-  
+
   blogs.forEach(element => {
     const comparisonMappedAuthor = comparisonArray.map(compare => {
       return compare.author
     })
-    
-      if(comparisonMappedAuthor.includes(element.author))
-      {
-        const target = comparisonArray.find( compare => compare.author === element.author )
-        target.likes = target.likes + element.likes
+
+    if(comparisonMappedAuthor.includes(element.author))
+    {
+      const target = comparisonArray.find( compare => compare.author === element.author )
+      target.likes = target.likes + element.likes
+    }
+    else
+    {
+      const addObject = {
+        author: element.author,
+        likes: element.likes
       }
-      else
-      {
-        const addObject = {
-          author: element.author,
-          likes: element.likes
-        }      
-        comparisonArray = comparisonArray.concat(addObject)
-      }
-  
-  });
-  
+      comparisonArray = comparisonArray.concat(addObject)
+    }
+
+  })
+
   const comparisonMap = comparisonArray.map(compa => { return Number(compa.likes) } )
-  return comparisonArray.find( blog => blog.likes === comparisonMap.reduce(maxCallback));
-  
-  }
- 
-  module.exports = {
-    dummy,
-    totalLikes,
-    favoriteBlog,
-    mostBlogs,
-    mostLikes
-  }
-  
+  return comparisonArray.find( blog => blog.likes === comparisonMap.reduce(maxCallback))
+}
+
+module.exports = {
+  dummy,
+  totalLikes,
+  favoriteBlog,
+  mostBlogs,
+  mostLikes
+}
